@@ -82,20 +82,20 @@ function Home() {
   }
   
   return (
-    <div>
-      <div className="flex flex-col items-center justify-center bg-black bg-opacity-70 max-h-full max-w-max my-5 p-5 rounded-md">
-        <div className="flex flex-row items-center justify-center px-5 mt-5">
+    
+      <div className="  bg-black bg-opacity-70 md:max-h-full md:max-w-max  md:p-5 p-2 rounded-md">
+        <div className="flex flex-row items-center justify-center px-2 md:px-5 mt-5 md:mt-5">
           <input
             type="text"
             placeholder="Enter the city name"
-            className="appearance-none border-transparent w-80 px-3 py-2  bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:bg-white focus:ring-0 rounded-lg"
+            className="appearance-none border-transparent w-[70%] md:w-80 px-3 py-2  bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:bg-white focus:ring-0 rounded-lg"
             onChange={(e) => setName(e.currentTarget.value)}
           />
           <button className=" items-center" onClick={accessData}>
             <img
               src="../images/searchIn.png"
               alt=""
-              className=" ml-5 rounded-full h-10 hover:cursor-pointer hover:scale-125"
+              className=" ml-5 rounded-full md:h-10 h-6 hover:cursor-pointer hover:scale-125"
             />
           </button>
         </div>
@@ -104,37 +104,37 @@ function Home() {
           <p>{error}</p>
         </div>
 
-        <div className="flex flex-col justify-center items-center py-3 mt-5">
-          <img src={data.image} alt="" className="h-40" />
-          <p className="text-white font-sans text-2xl font-thin italic">
+        <div className="flex flex-col justify-center items-center md:py-3 md:mt-5 mt-2 ">
+          <img src={data.image} alt="" className="md:h-40 h-20 " />
+          <p className="text-white font-sans text-xl md:text-2xl font-thin italic">
             {data.main}
           </p>
-          <p className="text-white font-sans text-3xl font-semibold mt-3"> {data.celcius.toFixed(2)}° C</p>
-          <p className="text-white font-mono text-4xl font-bold uppercase mt-3">{data.name}</p>
+          <p className="text-white font-sans text-2xl md:text-3xl font-semibold mt-3"> {data.celcius.toFixed(2)}° C</p>
+          <p className="text-white font-mono text-3xl md:text-4xl font-semibold md:font-bold uppercase mt-3">{data.name}</p>
         </div>
 
         <div className="flex flex-row px-5 py-3">
-          <div className="flex flex-row items-center justify-center px-5">
-            <img src="../images/humidity.png" alt="" className=" h-14" />
+          <div className="flex flex-row items-center justify-center px-2 md:px-5">
+            <img src="../images/humidity.png" alt="" className="h-7 md:h-14" />
             <div className="flex flex-col py-5 ml-3">
-              <p className="text-white font-sans text-xl">{data.humidity}%</p>
-              <p className="text-white font-serif text-xl font-medium">
+              <p className="text-white font-sans text-sm md:text-xl">{data.humidity}%</p>
+              <p className="text-white font-serif text-sm md:text-xl font-medium">
                 Humidity
               </p>
             </div>
           </div>
-          <div className="flex flex-row items-center justify-center px-5 ml-3">
-            <img src="../images/wind.png" alt="" className=" h-14" />
+          <div className="flex flex-row items-center justify-center px-2 md:px-5 ml-3">
+            <img src="../images/wind.png" alt="" className=" h-7  md:h-14" />
             <div className="flex flex-col py-5 ml-3">
-              <p className="text-white font-sans text-xl">{data.speed.toFixed(2)} km/h</p>
-              <p className="text-white font-serif text-xl font-medium">
+              <p className="text-white font-sans text-sm md:text-xl">{data.speed.toFixed(2)} km/h</p>
+              <p className="text-white font-serif text-sm md:text-xl font-medium">
                 Wind speed
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }
 
